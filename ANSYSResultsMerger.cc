@@ -89,6 +89,15 @@ int main(int argc, char* argv[])
     }
   }
 
+  std::cout << "LOCX" << ", "
+      << "LOCY" << ", "
+      << "LOCZ";
+
+  for (int i=0;i<nResults;i++) {
+    std::cout << ", " << "RESULT_" << i;
+  }
+  std::cout << std::endl;
+
   for (std::map<int,result>::iterator it = results.begin();
        it!=results.end();
        ++it) {
