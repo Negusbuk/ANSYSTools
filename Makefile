@@ -1,5 +1,6 @@
 TARGETS = CSV2CStruct \
-		  ANSYSResultsMerger
+		  ANSYSResultsMerger \
+		  ANSYSResultsMatcher2D
           
 all: $(TARGETS)
 
