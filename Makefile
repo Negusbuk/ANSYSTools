@@ -3,11 +3,11 @@ TARGETS = CSV2CStruct \
           
 all: $(TARGETS)
 
+install: $(TARGETS)
+	@for TARGET in $(TARGETS); do (cp $$TARGET ~/bin; chmod a+x ~/bin/$$TARGET); done
+
 %: %.cc
 	clang++ -stdlib=libc++ -std=c++11 -o $@ $<
-
-install:
-	@for TARGET in $(TARGETS); do (cp $$TARGET ~/bin; chmod a+x ~/bin/$$TARGET); done
 
 clean:
 	rm -f $(TARGETS)
