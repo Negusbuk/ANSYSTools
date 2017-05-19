@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 #include <map>
 #include <vector>
 #include <ios>
@@ -90,12 +91,12 @@ int main(int argc, char* argv[])
     }
   }
 
-  std::cout << "LOCX" << ", "
-      << "LOCY" << ", "
-      << "LOCZ";
+  std::cout << std::setw(16) << "LOCX"
+      << std::setw(16) << "LOCY"
+      << std::setw(16) << "LOCZ";
 
   for (int i=0;i<nResults;i++) {
-    std::cout << ", " << "RESULT_" << i;
+    std::cout << std::setw(15) << "RESULT_" << i;
   }
   std::cout << std::endl;
 
@@ -110,14 +111,14 @@ int main(int argc, char* argv[])
 
       it->second.validity = true;
 
-      std::cout << std::scientific << itFind->second.locx << ", "
-          << std::scientific << itFind->second.locy << ", "
-          << std::scientific << itFind->second.locz;
+      std::cout << std::setw(16) << std::scientific << itFind->second.locx
+          << std::setw(16) << std::scientific << itFind->second.locy
+          << std::setw(16) << std::scientific << itFind->second.locz;
 
       for (std::vector<double>::iterator itV = it->second.values.begin();
            itV!=it->second.values.end();
            ++itV) {
-        std::cout << ", " << std::scientific << *itV;
+        std::cout << std::setw(16) << std::scientific << *itV;
       }
       std::cout << std::endl;
     }
