@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
 {
   if (argc<5) {
     std::cerr << "usage: ANSYSResultsMerger LOCX.txt LOCY.txt LOCZ.txt result1.txt ..." << std::endl;
+    return 0;
   }
 
   std::string line;
